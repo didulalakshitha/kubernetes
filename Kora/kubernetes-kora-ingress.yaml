@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kora-kubernetes-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: hw1.example.com
+    http:
+      paths:
+      - path: /cook-service
+        backend:
+          serviceName: cook-management-service
+          servicePort: 80

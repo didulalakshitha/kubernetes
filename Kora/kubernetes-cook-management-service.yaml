@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cook-management-service
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 5001
+  selector:
+    app: cook-management-service
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cook-management-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cook-management-service
+  template:
+    metadata:
+      labels:
+        app: cook-management-service
+    spec:
+      containers:
+      - name: cook-management-service
+        image: "dlakdocker/cook-management-service:1.1"
+        ports:
+        - containerPort: 5001
+      nodeSelector:
+        nodetype: "worker"
