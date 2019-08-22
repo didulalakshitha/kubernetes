@@ -28,6 +28,9 @@ spec:
       - name: notification-management-server
         image: "dlakdocker/notification-management-server:1.1"
         ports:
-        - containerPort: 5001
+        - containerPort: 5004
+        env:
+        - name: NODE_ENV
+          value: "qa"
       nodeSelector:
         nodetype: "worker"
