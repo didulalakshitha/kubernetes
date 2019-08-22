@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: notification-management-server
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 5001
+  selector:
+    app: notification-management-server
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-management-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: notification-management-server
+  template:
+    metadata:
+      labels:
+        app: notification-management-server
+    spec:
+      containers:
+      - name: notification-management-server
+        image: "dlakdocker/notification-management-server:1.1"
+        ports:
+        - containerPort: 5001
+      nodeSelector:
+        nodetype: "worker"
