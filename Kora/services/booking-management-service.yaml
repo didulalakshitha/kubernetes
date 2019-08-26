@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: booking-management-service
-        image: "dlakdocker/booking-management-service:1.1"
+        image: "dlakdocker/booking-management-service:1.2"
         ports:
         - containerPort: 5002
         env:

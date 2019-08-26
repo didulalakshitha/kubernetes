@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: host-management-service
-        image: "dlakdocker/host-management-service:1.1"
+        image: "dlakdocker/host-management-service:1.2"
         ports:
         - containerPort: 5000
         env:
