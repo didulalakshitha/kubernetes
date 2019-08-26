@@ -9,7 +9,24 @@ spec:
   - host: hw1.example.com
     http:
       paths:
+      - path: /booking-service
+        backend:
+          serviceName: booking-management-service
+          servicePort: 80
       - path: /cook-service
         backend:
           serviceName: cook-management-service
           servicePort: 80
+      - path: /host-service
+        backend:
+          serviceName: host-management-service
+          servicePort: 80
+      - path: /notification-service
+        backend:
+          serviceName: notification-management-server
+          servicePort: 80
+      - path: /payment-service
+        backend:
+          serviceName: payment-management-service
+          servicePort: 80
+
