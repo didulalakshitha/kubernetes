@@ -31,6 +31,6 @@ spec:
         - containerPort: 5000
         env:
         - name: NODE_ENV
-          value: "qa"
+          value: "dev"
       nodeSelector:
         nodetype: "worker"
