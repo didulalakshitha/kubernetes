@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: hw1.example.com
+  - host: ec2-3-14-248-46.us-east-2.compute.amazonaws.com
     http:
       paths:
       - path: /booking-service
