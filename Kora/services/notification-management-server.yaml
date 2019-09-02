@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: notification-management-server
-        image: "dlakdocker/notification-management-server:1.2"
+        image: "dlakdocker/notification-management-server:latest"
         ports:
         - containerPort: 5004
         env:
