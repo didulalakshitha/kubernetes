@@ -29,7 +29,3 @@ spec:
         backend:
           serviceName: payment-management-service
           servicePort: 80
-      - path: /auth
-        backend:
-          serviceName: passport
-          servicePort: 80
