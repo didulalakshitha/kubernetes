@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: 80
+  - port: 5004
     targetPort: 5004
   selector:
     app: notification-management-server
@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: notification-management-server
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: notification-management-server

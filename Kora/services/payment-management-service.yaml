@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: 80
+  - port: 5003
     targetPort: 5003
   selector:
     app: payment-management-service
@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: payment-management-service
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: payment-management-service
